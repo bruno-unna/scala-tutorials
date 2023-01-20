@@ -8,7 +8,7 @@ class WithTraitSpec extends AnyWordSpec {
 
   import WithTraitSpec._
 
-  "A person should" should {
+  "A person" should {
     "know how to breathe and say their name" in {
       assertResult("I'm Pat, alive and kicking")(pat.breathe())
     }
