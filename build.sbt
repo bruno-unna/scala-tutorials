@@ -9,8 +9,8 @@ val jUnitInterface = "com.github.sbt" % "junit-interface" % "0.13.3" % "test"
 val catsEffect = "org.typelevel" %% "cats-effect" % "3.5.2"
 val catEffectTest = "org.typelevel" %% "cats-effect-testkit" % "3.5.2" % Test
 val scalaReflection = "org.scala-lang" % "scala-reflect" % scalaV
-val logback = "ch.qos.logback" % "logback-classic" % "1.3.11"
-val embedMongoVersion = "4.9.2"
+val logback = "ch.qos.logback" % "logback-classic" % "1.4.11"
+val embedMongoVersion = "4.9.3"
 
 val scalaTestDeps = Seq(
   "org.scalatest" %% "scalatest" % "3.2.17" % Test,
@@ -173,7 +173,7 @@ lazy val scala_akka_dependencies: Seq[ModuleID] = Seq(
   "com.typesafe.akka" %% "akka-actor-testkit-typed" % AkkaVersion % Test,
   "com.lightbend.akka" %% "akka-stream-alpakka-mongodb" % "5.0.0",
   "com.typesafe.akka" %% "akka-stream" % AkkaVersion,
-  "org.mongodb.scala" %% "mongo-scala-driver" % "4.10.2",
+  "org.mongodb.scala" %% "mongo-scala-driver" % "4.11.0",
   "com.lightbend.akka" %% "akka-stream-alpakka-file" % "5.0.0",
   jUnitInterface,
   embeddedMongo % Test,
@@ -195,7 +195,7 @@ lazy val scala_akka = (project in file("scala-akka"))
   .settings(
     name := "scala-akka",
     libraryDependencies ++= scala_akka_dependencies ++ Seq(
-      "ch.qos.logback" % "logback-classic" % "1.2.3", // scala-steward:off
+      "ch.qos.logback" % "logback-classic" % "1.4.11", // scala-steward:off
       embeddedMongo % "it,compile"
     ) ++ scalaTestDeps.map(_.withConfigurations(Some("it,test"))),
     Defaults.itSettings
@@ -258,7 +258,7 @@ lazy val scala_libraries = (project in file("scala-libraries"))
 
 val circeVersion = "0.14.6"
 val monixVersion = "3.4.1"
-val elastic4sVersion = "8.9.3"
+val elastic4sVersion = "8.9.4"
 val sparkVersion = "3.5.0"
 
 val sparkCoreDep = "org.apache.spark" %% "spark-core" % sparkVersion
@@ -319,14 +319,14 @@ lazy val scala_libraries_3 = (project in file("scala-libraries-3"))
       "com.beachape" %% "enumeratum" % "1.7.3",
       "com.github.pureconfig" %% "pureconfig" % "0.17.4",
       "com.github.pureconfig" %% "pureconfig-enumeratum" % "0.17.4",
-      "com.typesafe" % "config" % "1.4.2",
+      "com.typesafe" % "config" % "1.4.3",
       "org.scalameta" %% "munit" % "0.7.29" % Test
     ),
     libraryDependencies += scalaMock,
     libraryDependencies += "com.softwaremill.retry" %% "retry" % "0.3.6",
     libraryDependencies ++= Seq(
-      "org.apache.logging.log4j" %% "log4j-api-scala" % "12.0",
-      "org.apache.logging.log4j" % "log4j-core" % "2.20.0" % Runtime
+      "org.apache.logging.log4j" %% "log4j-api-scala" % "13.0.0",
+      "org.apache.logging.log4j" % "log4j-core" % "2.21.1" % Runtime
     ),
     libraryDependencies += "com.lihaoyi" %% "os-lib" % osLibVersion
   )
@@ -336,8 +336,8 @@ lazy val scala_libraries_os = (project in file("scala-libraries-os"))
     name := "scala-libraries",
     libraryDependencies ++= scalaTestDeps,
     libraryDependencies ++= Seq(
-      "org.apache.logging.log4j" %% "log4j-api-scala" % "12.0",
-      "org.apache.logging.log4j" % "log4j-core" % "2.20.0" % Runtime
+      "org.apache.logging.log4j" %% "log4j-api-scala" % "13.0.0",
+      "org.apache.logging.log4j" % "log4j-core" % "2.21.1" % Runtime
     ),
     libraryDependencies += "com.lihaoyi" %% "os-lib" % osLibVersion
   )
@@ -354,7 +354,7 @@ lazy val scala_libraries_4 = (project in file("scala-libraries-4"))
     libraryDependencies ++= Seq(
       "org.scala-lang.modules" %% "scala-async" % "1.0.1",
       scalaReflection % Provided,
-      "org.tpolecat" %% "skunk-core" % "0.6.0",
+      "org.tpolecat" %% "skunk-core" % "0.6.1",
       logback,
       "com.typesafe.scala-logging" %% "scala-logging" % "3.9.5",
       "org.typelevel" %% "cats-core" % "2.10.0"
@@ -365,8 +365,8 @@ lazy val scala_libraries_4 = (project in file("scala-libraries-4"))
       "org.testcontainers" % "pulsar" % "1.19.1" % IntegrationTest
     ),
     libraryDependencies ++= Seq(
-      "software.amazon.awssdk" % "s3" % "2.20.158",
-      "com.amazonaws" % "aws-java-sdk-s3" % "1.12.556" % IntegrationTest,
+      "software.amazon.awssdk" % "s3" % "2.21.14",
+      "com.amazonaws" % "aws-java-sdk-s3" % "1.12.580" % IntegrationTest,
       "com.dimafeng" %% "testcontainers-scala-scalatest" % "0.41.0" % IntegrationTest,
       "com.dimafeng" %% "testcontainers-scala-localstack-v2" % "0.41.0" % IntegrationTest
     ),
@@ -379,13 +379,13 @@ lazy val scala_libraries_4 = (project in file("scala-libraries-4"))
   )
 
 val spireVersion = "0.18.0"
-val kafkaVersion = "7.5.0-ce"
+val kafkaVersion = "7.5.1-ce"
 val pureconfigVersion = "0.17.4"
-val jackSonVersion = "2.15.2"
-val log4jApiScalaVersion = "12.0"
+val jackSonVersion = "2.15.3"
+val log4jApiScalaVersion = "13.0.0"
 val log4jVersion = "2.20.0"
 val avro4sVersion = "4.1.1"
-val kafkaAvroSerializer = "6.2.11"
+val kafkaAvroSerializer = "7.5.1"
 
 lazy val scala_libraries_5 = (project in file("scala-libraries-5"))
   .settings(
@@ -407,6 +407,18 @@ lazy val scala_libraries_5 = (project in file("scala-libraries-5"))
     )
   )
 
+lazy val scala_libraries_6 = (project in file("scala-libraries-6"))
+  .settings(
+    name := "scala-libraries-6",
+    scalaVersion := scala3Version,
+    libraryDependencies ++= scalaTestDeps,
+    libraryDependencies ++= Seq(
+      "io.circe" %% "circe-yaml" % "0.14.2",
+      "io.circe" %% "circe-generic" % "0.14.6",
+      "io.circe" %% "circe-parser" % "0.14.6"
+    )
+  )
+
 lazy val scala_strings = (project in file("scala-strings"))
   .settings(
     name := "scala-strings",
@@ -424,15 +436,18 @@ lazy val scala_design_patterns = (project in file("scala-design-patterns"))
   )
 
 lazy val scala3_lang = (project in file("scala3-lang")).settings(
-  libraryDependencies ++= scalaTestDeps
+  libraryDependencies ++= scalaTestDeps,
+  scalaVersion := scala3Version
 )
 
 lazy val scala3_lang_2 = (project in file("scala3-lang-2")).settings(
-  libraryDependencies ++= scalaTestDeps
+  libraryDependencies ++= scalaTestDeps,
+  scalaVersion := scala3Version
 )
 
 lazy val scala3_lang_3 = (project in file("scala3-lang-3")).settings(
-  libraryDependencies ++= scalaTestDeps
+  libraryDependencies ++= scalaTestDeps,
+  scalaVersion := scala3Version
 )
 
 lazy val cats_effects = (project in file("cats-effects"))
@@ -507,7 +522,11 @@ lazy val spark_scala = (project in file("spark-scala"))
     libraryDependencies ++= Seq(
       sparkSqlDep,
       sparkCoreDep
-    ) ++ scalaTestDeps
+    ) ++ scalaTestDeps,
+    fork := true,
+    javaOptions ++= Seq(
+      "--add-exports=java.base/sun.nio.ch=ALL-UNNAMED" // Added for JDK 17 issue with Spark
+    )
   )
 
 addCommandAlias(
