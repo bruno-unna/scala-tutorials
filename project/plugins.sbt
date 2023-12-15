@@ -9,7 +9,7 @@ libraryDependencies += "ai.kien" %% "python-native-libs" % "0.2.4"
 // Make sure to keep the play plugin in sync with the sub modules under play-scala group
 addSbtPlugin("org.playframework" % "sbt-plugin" % "3.0.0")
 
-addSbtPlugin("org.playframework.twirl" % "sbt-twirl" % "2.0.1")
+addSbtPlugin("org.playframework.twirl" % "sbt-twirl" % "2.0.3")
 addSbtPlugin("com.earldouglas" % "xsbt-web-plugin" % "4.2.1")
 
 addSbtPlugin("pl.project13.scala" % "sbt-jmh" % "0.4.3")
