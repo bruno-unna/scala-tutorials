@@ -134,13 +134,14 @@ lazy val scala_lang_2 = (project in file("scala-lang-modules/scala-lang-2"))
       Seq(jUnitInterface) ++ scalaTestDeps
   )
 
-lazy val scala_core_collections = (project in file("scala-core-collections-modules/scala-core-collections"))
-  .settings(
-    name := "scala-core-collections",
-    libraryDependencies ++= Seq(
-      "org.scala-lang.modules" %% "scala-parallel-collections" % "1.0.4"
-    ) ++ scalaTestDeps
-  )
+lazy val scala_core_collections =
+  (project in file("scala-core-collections-modules/scala-core-collections"))
+    .settings(
+      name := "scala-core-collections",
+      libraryDependencies ++= Seq(
+        "org.scala-lang.modules" %% "scala-parallel-collections" % "1.0.4"
+      ) ++ scalaTestDeps
+    )
 
 lazy val scala_core_collections_2 =
   (project in file("scala-core-collections-modules/scala-core-collections-2"))
@@ -333,7 +334,7 @@ lazy val scala_libraries_3 = (project in file("scala-libraries-3"))
     libraryDependencies += "com.softwaremill.retry" %% "retry" % "0.3.6",
     libraryDependencies ++= Seq(
       "org.apache.logging.log4j" %% "log4j-api-scala" % "13.0.0",
-      "org.apache.logging.log4j" % "log4j-core" % "2.21.1" % Runtime
+      "org.apache.logging.log4j" % "log4j-core" % "2.22.1" % Runtime
     ),
     libraryDependencies += "com.lihaoyi" %% "os-lib" % osLibVersion
   )
@@ -344,7 +345,7 @@ lazy val scala_libraries_os = (project in file("scala-libraries-os"))
     libraryDependencies ++= scalaTestDeps,
     libraryDependencies ++= Seq(
       "org.apache.logging.log4j" %% "log4j-api-scala" % "13.0.0",
-      "org.apache.logging.log4j" % "log4j-core" % "2.21.1" % Runtime
+      "org.apache.logging.log4j" % "log4j-core" % "2.22.1" % Runtime
     ),
     libraryDependencies += "com.lihaoyi" %% "os-lib" % osLibVersion
   )
@@ -444,25 +445,29 @@ lazy val scala_design_patterns = (project in file("scala-design-patterns"))
     libraryDependencies += "com.novocode" % "junit-interface" % "0.11" % Test
   )
 
-lazy val scala3_lang = (project in file("scala-lang-modules/scala3-lang")).settings(
-  libraryDependencies ++= scalaTestDeps,
-  scalaVersion := scala3Version
-)
+lazy val scala3_lang =
+  (project in file("scala-lang-modules/scala3-lang")).settings(
+    libraryDependencies ++= scalaTestDeps,
+    scalaVersion := scala3Version
+  )
 
-lazy val scala3_lang_2 = (project in file("scala-lang-modules/scala3-lang-2")).settings(
-  libraryDependencies ++= scalaTestDeps,
-  scalaVersion := scala3Version
-)
+lazy val scala3_lang_2 =
+  (project in file("scala-lang-modules/scala3-lang-2")).settings(
+    libraryDependencies ++= scalaTestDeps,
+    scalaVersion := scala3Version
+  )
 
-lazy val scala3_lang_3 = (project in file("scala-lang-modules/scala3-lang-3")).settings(
-  libraryDependencies ++= scalaTestDeps,
-  scalaVersion := scala3Version
-)
+lazy val scala3_lang_3 =
+  (project in file("scala-lang-modules/scala3-lang-3")).settings(
+    libraryDependencies ++= scalaTestDeps,
+    scalaVersion := scala3Version
+  )
 
-lazy val scala3_lang_collections = (project in file("scala3-lang-collections")).settings(
-  libraryDependencies ++= scalaTestDeps,
-  scalaVersion := scala3Version
-)
+lazy val scala3_lang_collections =
+  (project in file("scala3-lang-collections")).settings(
+    libraryDependencies ++= scalaTestDeps,
+    scalaVersion := scala3Version
+  )
 
 lazy val cats_effects = (project in file("cats-effects"))
   .settings(
