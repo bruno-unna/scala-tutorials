@@ -120,13 +120,14 @@ lazy val scala_core_9 = (project in file("scala-core-modules/scala-core-9"))
     libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
   )
 
-lazy val scala_core_numbers = (project in file("scala-core-modules/scala-core-numbers"))
-  .settings(
-    name := "scala-core-numbers",
-    libraryDependencies ++= scalaTestDeps,
-    scalaVersion := scala3Version,
-    libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
-  )
+lazy val scala_core_numbers =
+  (project in file("scala-core-modules/scala-core-numbers"))
+    .settings(
+      name := "scala-core-numbers",
+      libraryDependencies ++= scalaTestDeps,
+      scalaVersion := scala3Version,
+      libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
+    )
 
 lazy val scala_core_io = (project in file("scala-core-modules/scala-core-io"))
   .settings(
@@ -321,7 +322,7 @@ lazy val scala_akka_3 = (project in file("scala-akka-3"))
     ) ++ scalaTestDeps.map(_.withConfigurations(Some("it,test")))
   )
 
-val monocleVersion = "2.1.0"
+val monocleVersion = "3.2.0"
 val slickVersion = "3.5.0"
 val shapelessVersion = "2.3.10"
 val scalazVersion = "7.3.8"
@@ -338,8 +339,8 @@ lazy val scala2_libraries =
         .map(_.withConfigurations(Some("it,test"))),
       resolvers += "Kafka avro serializer" at "https://packages.confluent.io/maven",
       libraryDependencies ++= Seq(
-        "com.github.julien-truffaut" %% "monocle-core" % monocleVersion,
-        "com.github.julien-truffaut" %% "monocle-macro" % monocleVersion,
+        "dev.optics" %% "monocle-core" % monocleVersion,
+        "dev.optics" %% "monocle-macro" % monocleVersion,
         "com.github.julien-truffaut" %% "monocle-law" % monocleVersion % "test",
         "com.chuusai" %% "shapeless" % shapelessVersion,
         "junit" % "junit" % "4.13.2" % Test,
