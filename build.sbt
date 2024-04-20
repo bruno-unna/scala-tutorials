@@ -42,7 +42,7 @@ lazy val scala_core_2 = (project in file("scala-core-modules/scala-core-2"))
     scalaVersion := scala3Version
   )
 
-val scalaXmlDep = "org.scala-lang.modules" %% "scala-xml" % "2.2.0"
+val scalaXmlDep = "org.scala-lang.modules" %% "scala-xml" % "2.3.0"
 
 lazy val scala_core_3 = (project in file("scala-core-modules/scala-core-3"))
   .settings(
@@ -120,13 +120,14 @@ lazy val scala_core_9 = (project in file("scala-core-modules/scala-core-9"))
     libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
   )
 
-lazy val scala_core_numbers = (project in file("scala-core-modules/scala-core-numbers"))
-  .settings(
-    name := "scala-core-numbers",
-    libraryDependencies ++= scalaTestDeps,
-    scalaVersion := scala3Version,
-    libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
-  )
+lazy val scala_core_numbers =
+  (project in file("scala-core-modules/scala-core-numbers"))
+    .settings(
+      name := "scala-core-numbers",
+      libraryDependencies ++= scalaTestDeps,
+      scalaVersion := scala3Version,
+      libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
+    )
 
 lazy val scala_core_io = (project in file("scala-core-modules/scala-core-io"))
   .settings(
