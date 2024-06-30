@@ -120,13 +120,14 @@ lazy val scala_core_9 = (project in file("scala-core-modules/scala-core-9"))
     libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
   )
 
-lazy val scala_core_numbers = (project in file("scala-core-modules/scala-core-numbers"))
-  .settings(
-    name := "scala-core-numbers",
-    libraryDependencies ++= scalaTestDeps,
-    scalaVersion := scala3Version,
-    libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
-  )
+lazy val scala_core_numbers =
+  (project in file("scala-core-modules/scala-core-numbers"))
+    .settings(
+      name := "scala-core-numbers",
+      libraryDependencies ++= scalaTestDeps,
+      scalaVersion := scala3Version,
+      libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
+    )
 
 lazy val scala_core_io = (project in file("scala-core-modules/scala-core-io"))
   .settings(
@@ -261,7 +262,7 @@ lazy val scala_test_junit4 = (project in file("scala-test-junit4"))
     scalaVersion := scala3Version,
     libraryDependencies ++=
       Seq(
-        "org.scalatestplus" %% "junit-4-13" % "3.2.18.0" % Test,
+        "org.scalatestplus" %% "junit-4-13" % "3.2.19.0" % Test,
         jUnitInterface
       )
   )
