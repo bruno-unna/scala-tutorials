@@ -15,10 +15,10 @@ val AkkaVersion = "2.8.5"
 val AkkaHttpVersion = "10.5.0"
 
 val scalaTestDeps = Seq(
-  "org.scalatest" %% "scalatest" % "3.2.18" % Test,
-  "org.scalatest" %% "scalatest-shouldmatchers" % "3.2.18" % Test,
-  "org.scalatest" %% "scalatest-wordspec" % "3.2.18" % Test,
-  "org.scalatest" %% "scalatest-flatspec" % "3.2.18" % Test
+  "org.scalatest" %% "scalatest" % "3.2.19" % Test,
+  "org.scalatest" %% "scalatest-shouldmatchers" % "3.2.19" % Test,
+  "org.scalatest" %% "scalatest-wordspec" % "3.2.19" % Test,
+  "org.scalatest" %% "scalatest-flatspec" % "3.2.19" % Test
 )
 
 val scalaMock = "org.scalamock" %% "scalamock" % "6.0.0-M2" % Test
@@ -120,13 +120,14 @@ lazy val scala_core_9 = (project in file("scala-core-modules/scala-core-9"))
     libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
   )
 
-lazy val scala_core_numbers = (project in file("scala-core-modules/scala-core-numbers"))
-  .settings(
-    name := "scala-core-numbers",
-    libraryDependencies ++= scalaTestDeps,
-    scalaVersion := scala3Version,
-    libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
-  )
+lazy val scala_core_numbers =
+  (project in file("scala-core-modules/scala-core-numbers"))
+    .settings(
+      name := "scala-core-numbers",
+      libraryDependencies ++= scalaTestDeps,
+      scalaVersion := scala3Version,
+      libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
+    )
 
 lazy val scala_core_io = (project in file("scala-core-modules/scala-core-io"))
   .settings(
