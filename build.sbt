@@ -120,13 +120,14 @@ lazy val scala_core_9 = (project in file("scala-core-modules/scala-core-9"))
     libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
   )
 
-lazy val scala_core_numbers = (project in file("scala-core-modules/scala-core-numbers"))
-  .settings(
-    name := "scala-core-numbers",
-    libraryDependencies ++= scalaTestDeps,
-    scalaVersion := scala3Version,
-    libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
-  )
+lazy val scala_core_numbers =
+  (project in file("scala-core-modules/scala-core-numbers"))
+    .settings(
+      name := "scala-core-numbers",
+      libraryDependencies ++= scalaTestDeps,
+      scalaVersion := scala3Version,
+      libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
+    )
 
 lazy val scala_core_io = (project in file("scala-core-modules/scala-core-io"))
   .settings(
@@ -379,7 +380,7 @@ lazy val scala2_libraries =
 val circeVersion = "0.14.6"
 val monixVersion = "3.4.1"
 val elastic4sVersion = "8.11.5"
-val sparkVersion = "3.5.1"
+val sparkVersion = "3.5.3"
 
 val sparkCoreDep = "org.apache.spark" %% "spark-core" % sparkVersion
 val sparkSqlDep = "org.apache.spark" %% "spark-sql" % sparkVersion
