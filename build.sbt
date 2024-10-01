@@ -120,13 +120,14 @@ lazy val scala_core_9 = (project in file("scala-core-modules/scala-core-9"))
     libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
   )
 
-lazy val scala_core_numbers = (project in file("scala-core-modules/scala-core-numbers"))
-  .settings(
-    name := "scala-core-numbers",
-    libraryDependencies ++= scalaTestDeps,
-    scalaVersion := scala3Version,
-    libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
-  )
+lazy val scala_core_numbers =
+  (project in file("scala-core-modules/scala-core-numbers"))
+    .settings(
+      name := "scala-core-numbers",
+      libraryDependencies ++= scalaTestDeps,
+      scalaVersion := scala3Version,
+      libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
+    )
 
 lazy val scala_core_io = (project in file("scala-core-modules/scala-core-io"))
   .settings(
@@ -159,7 +160,7 @@ lazy val scala_core_dates =
       scalaVersion := scala3Version,
       libraryDependencies ++= scalaTestDeps,
       libraryDependencies += "joda-time" % "joda-time" % "2.12.7",
-      libraryDependencies += "com.github.nscala-time" %% "nscala-time" % "2.32.0",
+      libraryDependencies += "com.github.nscala-time" %% "nscala-time" % "2.34.0",
       libraryDependencies += "com.typesafe" % "config" % "1.4.3"
     )
 
