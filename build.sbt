@@ -378,7 +378,7 @@ lazy val scala2_libraries =
 
 val circeVersion = "0.14.6"
 val monixVersion = "3.4.1"
-val elastic4sVersion = "8.11.5"
+val elastic4sVersion = "8.15.4"
 val sparkVersion = "3.5.1"
 
 val sparkCoreDep = "org.apache.spark" %% "spark-core" % sparkVersion
@@ -420,8 +420,8 @@ lazy val scala_libraries = (project in file("scala-libraries"))
       "com.lihaoyi" %% "requests" % "0.8.0"
     ),
     libraryDependencies ++= Seq(
-      "com.sksamuel.elastic4s" %% "elastic4s-client-esjava" % elastic4sVersion,
-      "com.sksamuel.elastic4s" %% "elastic4s-core" % elastic4sVersion,
+      "nl.gn0s1s" %% "elastic4s-client-esjava" % elastic4sVersion,
+      "nl.gn0s1s" %% "elastic4s-core" % elastic4sVersion,
       logback
     ),
     Defaults.itSettings
