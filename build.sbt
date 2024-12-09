@@ -61,7 +61,7 @@ lazy val scala2_core = (project in file("scala-2-modules/scala2-core"))
     libraryDependencies += scalaReflection,
     libraryDependencies += scalaXmlDep,
     libraryDependencies += "com.github.scopt" %% "scopt" % "4.1.0",
-    libraryDependencies += "org.rogach" %% "scallop" % "5.1.0",
+    libraryDependencies += "org.rogach" %% "scallop" % "5.2.0",
     libraryDependencies += "org.backuity.clist" %% "clist-core" % "3.5.1",
     libraryDependencies += "org.backuity.clist" %% "clist-macros" % "3.5.1" % "provided",
     libraryDependencies += "args4j" % "args4j" % "2.37",
@@ -120,13 +120,14 @@ lazy val scala_core_9 = (project in file("scala-core-modules/scala-core-9"))
     libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
   )
 
-lazy val scala_core_numbers = (project in file("scala-core-modules/scala-core-numbers"))
-  .settings(
-    name := "scala-core-numbers",
-    libraryDependencies ++= scalaTestDeps,
-    scalaVersion := scala3Version,
-    libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
-  )
+lazy val scala_core_numbers =
+  (project in file("scala-core-modules/scala-core-numbers"))
+    .settings(
+      name := "scala-core-numbers",
+      libraryDependencies ++= scalaTestDeps,
+      scalaVersion := scala3Version,
+      libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
+    )
 
 lazy val scala_core_io = (project in file("scala-core-modules/scala-core-io"))
   .settings(
