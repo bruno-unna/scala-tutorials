@@ -120,13 +120,14 @@ lazy val scala_core_9 = (project in file("scala-core-modules/scala-core-9"))
     libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
   )
 
-lazy val scala_core_numbers = (project in file("scala-core-modules/scala-core-numbers"))
-  .settings(
-    name := "scala-core-numbers",
-    libraryDependencies ++= scalaTestDeps,
-    scalaVersion := scala3Version,
-    libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
-  )
+lazy val scala_core_numbers =
+  (project in file("scala-core-modules/scala-core-numbers"))
+    .settings(
+      name := "scala-core-numbers",
+      libraryDependencies ++= scalaTestDeps,
+      scalaVersion := scala3Version,
+      libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
+    )
 
 lazy val scala_core_io = (project in file("scala-core-modules/scala-core-io"))
   .settings(
@@ -356,8 +357,8 @@ lazy val scala2_libraries =
         "com.github.pureconfig" %% "pureconfig-enumeratum" % "0.17.6",
         "com.typesafe" % "config" % "1.4.3",
         "org.scala-lang.modules" %% "scala-async" % "1.0.1",
-        "com.clever-cloud.pulsar4s" %% "pulsar4s-core" % "2.9.1",
-        "com.clever-cloud.pulsar4s" %% "pulsar4s-jackson" % "2.9.1",
+        "com.clever-cloud.pulsar4s" %% "pulsar4s-core" % "2.11.0",
+        "com.clever-cloud.pulsar4s" %% "pulsar4s-jackson" % "2.11.0",
         "org.testcontainers" % "pulsar" % "1.19.7" % IntegrationTest,
         "org.apache.kafka" % "kafka-clients" % kafkaVersion,
         "com.fasterxml.jackson.core" % "jackson-databind" % jackSonVersion,
