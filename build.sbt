@@ -120,13 +120,14 @@ lazy val scala_core_9 = (project in file("scala-core-modules/scala-core-9"))
     libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
   )
 
-lazy val scala_core_numbers = (project in file("scala-core-modules/scala-core-numbers"))
-  .settings(
-    name := "scala-core-numbers",
-    libraryDependencies ++= scalaTestDeps,
-    scalaVersion := scala3Version,
-    libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
-  )
+lazy val scala_core_numbers =
+  (project in file("scala-core-modules/scala-core-numbers"))
+    .settings(
+      name := "scala-core-numbers",
+      libraryDependencies ++= scalaTestDeps,
+      scalaVersion := scala3Version,
+      libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
+    )
 
 lazy val scala_core_io = (project in file("scala-core-modules/scala-core-io"))
   .settings(
@@ -160,7 +161,7 @@ lazy val scala_core_dates =
       libraryDependencies ++= scalaTestDeps,
       libraryDependencies += "joda-time" % "joda-time" % "2.12.7",
       libraryDependencies += "com.github.nscala-time" %% "nscala-time" % "2.32.0",
-      libraryDependencies += "com.typesafe" % "config" % "1.4.3"
+      libraryDependencies += "com.typesafe" % "config" % "1.4.4"
     )
 
 lazy val scala_lang = (project in file("scala-lang-modules/scala-lang"))
@@ -354,7 +355,7 @@ lazy val scala2_libraries =
         "io.monix" %% "monix" % monixVersion,
         pureConfigDep,
         "com.github.pureconfig" %% "pureconfig-enumeratum" % "0.17.6",
-        "com.typesafe" % "config" % "1.4.3",
+        "com.typesafe" % "config" % "1.4.4",
         "org.scala-lang.modules" %% "scala-async" % "1.0.1",
         "com.clever-cloud.pulsar4s" %% "pulsar4s-core" % "2.9.1",
         "com.clever-cloud.pulsar4s" %% "pulsar4s-jackson" % "2.9.1",
@@ -550,7 +551,7 @@ lazy val scala_libraries_config = (project in file("scala-libraries-config"))
     scalaVersion := scala3Version,
     libraryDependencies ++= scalaTestDeps,
     libraryDependencies ++= Seq(
-      "com.typesafe" % "config" % "1.4.3",
+      "com.typesafe" % "config" % "1.4.4",
       munitDep,
       "com.github.japgolly.clearconfig" %% "core" % "3.1.0",
       catsEffect,
