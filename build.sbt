@@ -120,13 +120,14 @@ lazy val scala_core_9 = (project in file("scala-core-modules/scala-core-9"))
     libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
   )
 
-lazy val scala_core_numbers = (project in file("scala-core-modules/scala-core-numbers"))
-  .settings(
-    name := "scala-core-numbers",
-    libraryDependencies ++= scalaTestDeps,
-    scalaVersion := scala3Version,
-    libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
-  )
+lazy val scala_core_numbers =
+  (project in file("scala-core-modules/scala-core-numbers"))
+    .settings(
+      name := "scala-core-numbers",
+      libraryDependencies ++= scalaTestDeps,
+      scalaVersion := scala3Version,
+      libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
+    )
 
 lazy val scala_core_io = (project in file("scala-core-modules/scala-core-io"))
   .settings(
@@ -401,7 +402,7 @@ lazy val scala_libraries = (project in file("scala-libraries"))
       circeParserDep,
       "com.softwaremill.retry" %% "retry" % "0.3.6",
       log4jApiScalaDep,
-      "org.apache.logging.log4j" % "log4j-core" % "2.23.1" % Runtime,
+      "org.apache.logging.log4j" % "log4j-core" % "2.25.3" % Runtime,
       "com.typesafe.scala-logging" %% "scala-logging" % "3.9.5",
       "software.amazon.awssdk" % "s3" % "2.25.9",
       "com.github.seratch" %% "awscala" % "0.9.2"
@@ -445,7 +446,7 @@ lazy val scala_libraries_os = (project in file("scala-libraries-os"))
     libraryDependencies ++= scalaTestDeps,
     libraryDependencies ++= Seq(
       log4jApiScalaDep,
-      "org.apache.logging.log4j" % "log4j-core" % "2.23.1" % Runtime
+      "org.apache.logging.log4j" % "log4j-core" % "2.25.3" % Runtime
     ),
     libraryDependencies += osLibDep
   )
