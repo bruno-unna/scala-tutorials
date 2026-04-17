@@ -614,7 +614,7 @@ lazy val scala_libraries_persistence =
       libraryDependencies ++= Seq(
         "com.typesafe.slick" %% "slick" % slickVersion,
         "com.h2database" % "h2" % "2.4.240",
-        "org.tpolecat" %% "skunk-core" % "0.6.5",
+        "org.tpolecat" %% "skunk-core" % "1.0.0",
         doobieCore,
         doobiePGDep,
         "org.reactivemongo" %% "reactivemongo" % reactiveMongo,
