@@ -364,7 +364,7 @@ val reactiveMongo = "1.1.0-RC19"
 val slickPgVersion = "0.23.1"
 val scalaTestContainersVersion = "0.44.1"
 val postgresqlVersion = "42.7.8"
-val json4sVersion = "4.1.0"
+val json4sVersion = "4.1.1"
 
 lazy val scala2_libraries =
   (project in file("scala-2-modules/scala2-libraries"))
