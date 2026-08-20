@@ -669,7 +669,7 @@ lazy val scala_design_patterns = (project in file("scala-design-patterns"))
     scalaVersion := scala3Version,
     libraryDependencies ++= scalaTestDeps,
     libraryDependencies += scalaTestPlusMockito,
-    libraryDependencies += "com.novocode" % "junit-interface" % "0.11" % Test
+    libraryDependencies += "com.github.sbt" % "junit-interface" % "0.13.3" % Test
   )
 
 lazy val scala_lang_3 =
